@@ -15,7 +15,7 @@ def index():
 def flist(id: str):
   try:
     return list(map(handler, listdir(f"titles/{id}/")))
-  except ValueError:
+  except FileNotFoundError:
     return abort(404)
 
 @app.get("/<id>/banner")
