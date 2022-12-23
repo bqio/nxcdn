@@ -1,0 +1,6 @@
+/titles
+/venv
+/__pycache__
+*.txt
+*.json
+!requirements.txt
