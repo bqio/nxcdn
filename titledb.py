@@ -18,6 +18,7 @@ def check_updates() -> bool:
       if not exists(DB_NAME) or not exists(to_sha_path(DB_NAME)):
         load_file(entry['download_url'], DB_NAME)
         save_sha(DB_NAME, entry['sha'])
+        break
       local_sha = read_sha(DB_NAME)
       if local_sha != entry['sha']:
         load_file(entry['download_url'], DB_NAME)
