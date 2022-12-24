@@ -9,7 +9,10 @@ def handler(s: str):
 
 @app.get("/")
 def index():
-  return "٩(◕‿◕｡)۶"
+  try:
+    return listdir(f"titles")
+  except FileNotFoundError:
+    return abort(404)
 
 @app.get("/<id>")
 def flist(id: str):
